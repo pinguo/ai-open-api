@@ -165,7 +165,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer/69d5c494a79d1
 
 
 # 3. 模型列表
-## 3.1快速超分
+## 3.1. 快速超分
 | modelID | 类型 | 描述 | 值 |
 |--------|------|------|------|
 | modelID | string | 是 | pg-fast-restorer |
