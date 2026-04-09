@@ -1,8 +1,8 @@
 # 1. Open API签名算法
 ## 1.1. SDK
-* [Golang](https://github.com/pinguo/open-api-sdk-go)
+* [Golang](https://github.com/pinguo/open-api-sdk-go/tree/v2)
 ```
-go get github.com/pinguo/open-api-sdk-go
+go get github.com/pinguo/open-api-sdk-go/v2
 ```
 
 ## 1.2. 算法说明
