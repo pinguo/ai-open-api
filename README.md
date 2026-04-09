@@ -28,6 +28,7 @@ go get github.com/pinguo/open-api-sdk-go
 | PG-Timestamp | string | 是 | 请求时间戳（Unix 秒） |
 | PG-Sign | string | 是 | 请求签名 |
 | Content-Type | string | 是 | application/json |
+| callback | string | 否 | 回调 URL，用于接收任务完成通知 |
 
 ## 2.1. 创建任务
 
