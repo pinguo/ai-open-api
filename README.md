@@ -4,10 +4,9 @@
 ```
 go get github.com/pinguo/open-api-sdk-go
 ```
-* [PHP](https://github.com/pinguo/ai-open-api/tree/main/php-sdk)
 
 ## 1.2. 算法说明
-* [算法说明](https://github.com/pinguo/open-api-sdk-go/blob/main/README.md)
+* [算法说明](https://github.com/pinguo/open-api-sdk-go/blob/v2/README.md)
 
 
 # 2. 接口文档
@@ -28,7 +27,7 @@ go get github.com/pinguo/open-api-sdk-go
 | PG-Timestamp | string | 是 | 请求时间戳（Unix 秒） |
 | PG-Sign | string | 是 | 请求签名 |
 | Content-Type | string | 是 | application/json |
-| callback | string | 否 | 回调 URL，用于接收任务完成通知 |
+| PG-Callback | string | 否 | 回调 URL，用于接收任务完成通知 |
 
 ## 2.1. 创建任务
 
