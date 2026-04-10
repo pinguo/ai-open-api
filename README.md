@@ -170,7 +170,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer/69d5c494a79d1
     "image_url": "http://example.com/image.jpg",
     "output_url": "http://example.com/image.jpg",
     "output_method": "PUT",
-    "scale": 2
+    "scale": 2 // 可选值：2、4
 }
 ```
 
