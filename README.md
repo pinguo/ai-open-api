@@ -13,7 +13,7 @@ go get github.com/pinguo/open-api-sdk-go/v2
 
 ## 概述
 
-**接口地址**： https://ai-open-api.pinguo.com
+**接口地址**： https://ai-open-api.pinguo.cn
 
 ## 认证方式
 
@@ -169,7 +169,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer/69d5c494a79d1
 | modelID | 类型 | 描述 | 值 |
 |--------|------|------|------|
 | modelID | string | 是 | pg-fast-restorer |
-| path | string | 是 | /v1/enhance |
+| path | string | 是 | v1/enhance |
 
 ### QueryString
 无
@@ -205,7 +205,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer/69d5c494a79d1
 | modelID | 类型 | 描述 | 值 |
 |--------|------|------|------|
 | modelID | string | 是 | turing-cloud-retouch |
-| path | string | 是 | /retouch |
+| path | string | 是 | retouch |
 
 
 ### QueryString
