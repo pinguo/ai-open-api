@@ -196,3 +196,61 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer/69d5c494a79d1
     "output_url": "http://example.com/image.jpg"
 }
 ```
+
+## 3.2. 图灵云端修图
+
+* 支持套用预设如追色等功能
+
+
+| modelID | 类型 | 描述 | 值 |
+|--------|------|------|------|
+| modelID | string | 是 | turing-cloud-retouch |
+| path | string | 是 | /retouch |
+
+
+### QueryString
+无
+
+### 请求body:
+```json
+{
+  "images": [
+    {
+      "id": "69b370faf85ce4ebaec93106",
+      "url": "https://ali-public-qa.oss-cn-hangzhou.aliyuncs.com/FtE6ZJ5RP8vUF_ucXgbYrdoliWw-"
+    }
+  ],
+  "preset": {
+    "share_code": "turing9ert88",
+    "store_owner_mobile": "19900000000"
+  },
+  "id": "69b39a3e09239d3856a20718"
+}
+```
+
+### 模型响应body:
+```json
+{
+    "code": 200,
+    "message": "ok",
+    "images": [
+        {
+            "id": "69b370faf85ce4ebaec93106",
+            "status": "succeed",
+            "message": "上传成功",
+            "resources": {
+                "retouch": {
+                    "etag": "6ED27A011E7BA1271CDD1A4032409BF9",
+                    "size": 4112425,
+                    "isPrivate": false,
+                    "mimeType": "image/jpeg",
+                    "uri": "aliyun://icc-ai-model-public/turing-retouch/69b39a3e09239d3856a20718/6ed27a011e7ba1271cdd1a4032409bf9.jpg",
+                    "url": "http://icc-ai-model-public.camera360.com/turing-retouch/69b39a3e09239d3856a20718/6ed27a011e7ba1271cdd1a4032409bf9.jpg",
+                    "width": 1333,
+                    "height": 2000
+                }
+            }
+        }
+    ]
+}
+```
