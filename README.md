@@ -53,12 +53,7 @@ go get github.com/pinguo/open-api-sdk-go/v2
     "image_url": "http://example.com/image.jpg",
     "output_url": "http://example.com/image.jpg",
     "output_method": "PUT",
-    "scale": 2,
-    "denoise": 0.4,
-    "sharpen": 0.5,
-    "compression": 0.3,
-    "overlap_ratio": 0.1,
-    "model_type": "hifi"
+    "scale": 2
 }
 ```
 
@@ -99,12 +94,7 @@ curl -X POST 'http://localhost:8000/v1/task/create/pg-fast-restorer/v1/enhance' 
     "image_url": "http://example.com/image.jpg",
     "output_url": "http://example.com/image.jpg",
     "output_method": "PUT",
-    "scale": 2,
-    "denoise": 0.4,
-    "sharpen": 0.5,
-    "compression": 0.3,
-    "overlap_ratio": 0.1,
-    "model_type": "hifi"
+    "scale": 2
 }'
 ```
 
@@ -180,12 +170,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer/69d5c494a79d1
     "image_url": "http://example.com/image.jpg",
     "output_url": "http://example.com/image.jpg",
     "output_method": "PUT",
-    "scale": 2,
-    "denoise": 0.4,
-    "sharpen": 0.5,
-    "compression": 0.3,
-    "overlap_ratio": 0.1,
-    "model_type": "hifi"
+    "scale": 2 // 可选值：2、4
 }
 ```
 
