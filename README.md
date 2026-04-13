@@ -197,8 +197,9 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer-2x-enhanced/6
 ### 成功响应参数
 | 参数 | 类型 | 说明 |
 |------|------|------|
-| status | string | 任务状态， "success" 表示已完成 |
-| output_url | string | 请求参数中的output_url |
+| code | int | 状态码：200 表示模型处理成功 |
+| message | string | "ok" |
+| data | string | 请求参数中的output_url |
 
 ### 模型错误消息body:
 ```json
@@ -211,7 +212,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer-2x-enhanced/6
 ### 错误响应参数
 | 参数 | 类型 | 说明 |
 |------|------|------|
-| code | int | 错误码：500 表示服务器错误等 |
+| code | int | 错误码：500 表示服务器错误等，400 表示参数错误等 |
 | message | string | 错误信息 |
 
 
