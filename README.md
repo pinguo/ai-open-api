@@ -189,27 +189,31 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer-2x-enhanced/6
 ### 模型成功响应body:
 ```json
 {
-    "status": "success",
-    "output_url": "http://example.com/image.jpg"
+    "code": 200,
+    "message": "ok",
+    "data": "http://example.com/image.jpg"
 }
 ```
 ### 成功响应参数
 | 参数 | 类型 | 说明 |
 |------|------|------|
-| status | string | 任务状态， "success" 表示已完成 |
-| output_url | string | 请求参数中的output_url |
+| code | int | 状态码：200 表示模型处理成功 |
+| message | string | "ok" |
+| data | string | 请求参数中的output_url |
 
 ### 模型错误消息body:
 ```json
 {
-  "detail": "Error message"
+  "code": 500,
+  "message": "Error message"
 }
 ```
 
 ### 错误响应参数
 | 参数 | 类型 | 说明 |
 |------|------|------|
-| detail | string | 错误信息 |
+| code | int | 错误码：500 表示服务器错误等，400 表示参数错误等 |
+| message | string | 错误信息 |
 
 
 
@@ -261,7 +265,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer-2x-enhanced/6
 {
     "code": 200,
     "message": "ok",
-    "images": [
+    "data": [
         {
             "id": "69b370faf85ce4ebaec93106",
             "status": "succeed",
@@ -288,20 +292,20 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer-2x-enhanced/6
 |------|------|------|
 | code | int | 200 表示成功 |
 | message | string | "ok" 表示成功 |
-| images | array | 图片列表，每个元素包含图片 ID、状态、消息和资源 |
-| images.id | string | 图片 ID |
-| images.status | string | 图片状态， "succeed" 表示成功 |
-| images.message | string | 图片状态消息 |
-| images.resources | object | 图片资源信息，包含 retouch 资源 |
-| images.resources.retouch | object | 图片资源信息，包含 retouch 资源 |
-| images.resources.retouch.etag | string | 图片资源的 ETag |
-| images.resources.retouch.size | int | 图片资源的大小 |
-| images.resources.retouch.isPrivate | boolean | 是否为私有资源 |
-| images.resources.retouch.mimeType | string | 图片资源的 MIME 类型 |
-| images.resources.retouch.uri | string | 图片资源的 URI |
-| images.resources.retouch.url | string | 图片资源的 URL |
-| images.resources.retouch.width | int | 图片资源的宽度 |
-| images.resources.retouch.height | int | 图片资源的高度 |
+| data | array | 图片列表，每个元素包含图片 ID、状态、消息和资源 |
+| data.id | string | 图片 ID |
+| data.status | string | 图片状态， "succeed" 表示成功 |
+| data.message | string | 图片状态消息 |
+| data.resources | object | 图片资源信息，包含 retouch 资源 |
+| data.resources.retouch | object | 图片资源信息，包含 retouch 资源 |
+| data.resources.retouch.etag | string | 图片资源的 ETag |
+| data.resources.retouch.size | int | 图片资源的大小 |
+| data.resources.retouch.isPrivate | boolean | 是否为私有资源 |
+| data.resources.retouch.mimeType | string | 图片资源的 MIME 类型 |
+| data.resources.retouch.uri | string | 图片资源的 URI |
+| data.resources.retouch.url | string | 图片资源的 URL |
+| data.resources.retouch.width | int | 图片资源的宽度 |
+| data.resources.retouch.height | int | 图片资源的高度 |
 
 ### 模型错误消息body:
 ```json
