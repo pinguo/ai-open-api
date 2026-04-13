@@ -75,7 +75,7 @@ go get github.com/pinguo/open-api-sdk-go/v2
 
 | 错误码 | 说明 |
 |--------|------|
-| 400 | 参数错误（modelID 无效） |
+| 400 | 参数错误 |
 | 432 | 签名验证失败 |
 | 500 | 模型请求失败 |
 
@@ -143,7 +143,7 @@ curl -X POST 'http://localhost:8000/v1/task/create/pg-fast-restorer-2x-enhanced'
 
 | 错误码 | 说明 |
 |--------|------|
-| 400 | 参数错误（modelID 或 taskID 无效） |
+| 400 | 参数错误|
 | 432 | 签名验证失败 |
 | 500 | 模型请求失败 |
 
