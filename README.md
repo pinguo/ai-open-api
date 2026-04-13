@@ -43,9 +43,7 @@ go get github.com/pinguo/open-api-sdk-go/v2
 | modelID | string | 是 | 模型 ID，例如：pg-fast-restorer |
 
 ### 请求体
-
-请求体内容根据具体模型服务要求而定，以 JSON 格式传递。
-请求/响应参数请参考[模型列表](#model-list)中的参数详细说明。
+<font color="red">请求体内容根据具体模型服务要求而定,具体参数请参考[模型列表](#model-list)中对应模型的参数详细说明。</font>
 
 **示例（快速超分）**:
 ```json
