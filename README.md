@@ -43,7 +43,8 @@ go get github.com/pinguo/open-api-sdk-go/v2
 | modelID | string | 是 | 模型 ID，例如：pg-fast-restorer |
 
 ### 请求体
-<font color="red">请求体内容根据具体模型服务要求而定,具体参数请参考[模型列表](#model-list)中对应模型的参数详细说明。</font>
+
+> **注意**：请求体内容根据具体模型服务而定,具体参数请参考[模型列表](#model-list)中对应模型的参数详细说明。
 
 **示例（快速超分）**:
 ```json
@@ -128,6 +129,9 @@ curl -X POST 'http://localhost:8000/v1/task/create/pg-fast-restorer' \
 | taskID | string | 任务 ID（由创建任务接口返回） |
 | status | string | 任务状态， "done" 表示已完成(init: 初始化中,running: 运行中,done: 已完成,cancel: 已取消) |
 | data | string | 模型本身响应的JSON字符串 |
+
+> **注意**：响应参数中的data根据具体模型服务而定,具体参数请参考[模型列表](#model-list)中对应模型的参数详细说明。
+
 
 
 **错误响应**:
