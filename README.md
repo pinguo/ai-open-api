@@ -75,7 +75,7 @@ go get github.com/pinguo/open-api-sdk-go/v2
 
 | 错误码 | 说明 |
 |--------|------|
-| 400 | 参数错误（modelID 无效） |
+| 400 | 参数错误 |
 | 432 | 签名验证失败 |
 | 500 | 模型请求失败 |
 
@@ -143,7 +143,7 @@ curl -X POST 'http://localhost:8000/v1/task/create/pg-fast-restorer-2x-enhanced'
 
 | 错误码 | 说明 |
 |--------|------|
-| 400 | 参数错误（modelID 或 taskID 无效） |
+| 400 | 参数错误|
 | 432 | 签名验证失败 |
 | 500 | 模型请求失败 |
 
@@ -181,7 +181,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer-2x-enhanced/6
 |------|------|------|------|
 | image_url | string | 是 | 输入图片 URL，仅支持jpg\jpeg\png格式的图片 |
 | output_url | string | 是 | 结果图上传的预签名URL(云存储商的预签名URL) |
-| output_method | string | 是 | 上传方法: PUT 或 POST |
+| output_method | string | 否 | 上传方法: PUT 或 POST，默认为PUT |
 
 
 
