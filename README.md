@@ -40,7 +40,7 @@ go get github.com/pinguo/open-api-sdk-go/v2
 
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
-| modelID | string | 是 | 模型 ID，例如：pg-fast-restorer |
+| modelID | string | 是 | 模型 ID，例如：pg-fast-restorer-2x-enhanced |
 
 ### 请求体
 
@@ -51,8 +51,7 @@ go get github.com/pinguo/open-api-sdk-go/v2
 {
     "image_url": "http://example.com/image.jpg",
     "output_url": "http://example.com/image.jpg",
-    "output_method": "PUT",
-    "scale": 2
+    "output_method": "PUT"
 }
 ```
 
@@ -84,7 +83,7 @@ go get github.com/pinguo/open-api-sdk-go/v2
 ### 请求示例
 
 ```bash
-curl -X POST 'http://localhost:8000/v1/task/create/pg-fast-restorer' \
+curl -X POST 'http://localhost:8000/v1/task/create/pg-fast-restorer-2x-enhanced' \
   -H 'Content-Type: application/json' \
   -H 'PG-AccessKey: OYHLHUoiQd3jTz7+eP1EUmcm' \
   -H 'PG-Timestamp: 1712345678' \
@@ -92,8 +91,7 @@ curl -X POST 'http://localhost:8000/v1/task/create/pg-fast-restorer' \
   -d '{
     "image_url": "http://example.com/image.jpg",
     "output_url": "http://example.com/image.jpg",
-    "output_method": "PUT",
-    "scale": 2
+    "output_method": "PUT"
 }'
 ```
 
@@ -110,7 +108,7 @@ curl -X POST 'http://localhost:8000/v1/task/create/pg-fast-restorer' \
 
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
-| modelID | string | 是 | 模型 ID，例如：pg-fast-restorer |
+| modelID | string | 是 | 模型 ID，例如：pg-fast-restorer-2x-enhanced |
 | taskID | string | 是 | 任务 ID（由创建任务接口返回） |
 
 ### 响应
@@ -153,7 +151,7 @@ curl -X POST 'http://localhost:8000/v1/task/create/pg-fast-restorer' \
 ### 请求示例
 
 ```bash
-curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer/69d5c494a79d195c1c39407f' \
+curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer-2x-enhanced/69d5c494a79d195c1c39407f' \
   -H 'PG-AccessKey: OYHLHUoiQd3jTz7+eP1EUmcm' \
   -H 'PG-Timestamp: 1712345678' \
   -H 'PG-Sign: abc123...'
@@ -166,7 +164,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer/69d5c494a79d1
 ## 3.1. 快速超分
 | modelID | 类型 | 描述 | 值 |
 |--------|------|------|------|
-| modelID | string | 是 | pg-fast-restorer |
+| modelID | string | 是 | 2倍超分：pg-fast-restorer-2x-enhanced、4倍超分：pg-fast-restorer-4x-enhanced |
 
 ### QueryString
 无
@@ -176,8 +174,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer/69d5c494a79d1
 {
     "image_url": "http://example.com/image.jpg",
     "output_url": "http://example.com/image.jpg",
-    "output_method": "PUT",
-    "scale": 2
+    "output_method": "PUT"
 }
 ```
 ### 请求参数
@@ -186,7 +183,6 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer/69d5c494a79d1
 | image_url | string | 是 | 输入图片 URL |
 | output_url | string | 是 | 结果图上传的预签名URL(云存储商的预签名URL) |
 | output_method | string | 是 | 上传方法: PUT 或 POST |
-| scale | int | 是 | 缩放比例，可选值：2、4 |
 
 
 
@@ -260,7 +256,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer/69d5c494a79d1
 
 
 
-### 模型响应body:
+### 模型成功响应body:
 ```json
 {
     "code": 200,
@@ -306,3 +302,17 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer/69d5c494a79d1
 | images.resources.retouch.url | string | 图片资源的 URL |
 | images.resources.retouch.width | int | 图片资源的宽度 |
 | images.resources.retouch.height | int | 图片资源的高度 |
+
+### 模型错误消息body:
+```json
+{
+  "message": "创建项目过程中发生错误: Turing API 错误 [500] http://127.0.0.1:8099/api/create_project: status code: 400, body={\"success\":false,\"message\":\"没有找到支持的图片文件\",\"data\":{\"workspaceId\":\"\",\"projectName\":\"\",\"imageCount\":0,\"folderPath\":\"\",\"importedFiles\":[],\"fileIds\":[]},\"code\":400,\"timestamp\":1775876920784}",
+  "code": 400
+}
+```
+### 错误响应参数
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| code | int | 错误码：400 表示参数错误，500 表示服务器错误等 |
+| message | string | 错误信息 |
+
