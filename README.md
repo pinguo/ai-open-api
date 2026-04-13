@@ -181,7 +181,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer-2x-enhanced/6
 |------|------|------|------|
 | image_url | string | 是 | 输入图片 URL，仅支持jpg\jpeg\png格式的图片 |
 | output_url | string | 是 | 结果图上传的预签名URL(云存储商的预签名URL) |
-| output_method | string | 是 | 上传方法: PUT 或 POST |
+| output_method | string | 否 | 上传方法: PUT 或 POST，默认为PUT |
 
 
 
