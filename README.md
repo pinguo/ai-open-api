@@ -163,7 +163,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer-2x-enhanced/6
 ## 3.1. 快速超分
 | modelID | 类型 | 描述 | 值 |
 |--------|------|------|------|
-| modelID | string | 是 | 2倍超分：pg-fast-restorer-2x-enhanced、4倍超分：pg-fast-restorer-4x-enhanced |
+| modelID | string | 是 | 2倍超分：pg-fast-restorer-2x-enhanced、2倍超分+人脸修复：pg-fast-restorer-2x-enhanced-facerecovery、4倍超分：pg-fast-restorer-4x-enhanced、4倍超分+人脸修复：pg-fast-restorer-4x-enhanced-facerecovery |
 
 ### QueryString
 无
