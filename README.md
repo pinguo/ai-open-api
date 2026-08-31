@@ -163,7 +163,7 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer-2x-enhanced/6
 ## 3.1. 快速超分
 | modelID | 类型 | 描述 | 值 |
 |--------|------|------|------|
-| modelID | string | 是 | 2倍超分：pg-fast-restorer-2x-enhanced、4倍超分：pg-fast-restorer-4x-enhanced |
+| modelID | string | 是 | 2倍超分：pg-fast-restorer-2x-enhanced、2倍超分+人脸修复：pg-fast-restorer-2x-enhanced-facerecovery、4倍超分：pg-fast-restorer-4x-enhanced、4倍超分+人脸修复：pg-fast-restorer-4x-enhanced-facerecovery |
 
 ### QueryString
 无
@@ -317,5 +317,57 @@ curl -X GET 'http://localhost:8000/v1/task/detail/pg-fast-restorer-2x-enhanced/6
 | 参数 | 类型 | 说明 |
 |------|------|------|
 | code | int | 错误码：400 表示参数错误，500 表示服务器错误等 |
+| message | string | 错误信息 |
+
+
+
+## 3.3. 抠图
+| modelID | 类型 | 描述 | 值 |
+|--------|------|------|------|
+| modelID | string | 是 | pg-id-seg-enhance |
+
+### QueryString
+无
+
+### 请求body:
+```json
+{
+    "image_url": "http://example.com/image.jpg"
+}
+```
+### 请求参数
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| image_url | string | 是 | 输入图片 URL |
+
+
+
+### 模型成功响应body:
+```json
+{
+    "code": 200,
+    "message": "ok",
+    "data": "http://example.com/image.png"
+}
+```
+### 成功响应参数
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| code | int | 状态码：200 表示模型处理成功 |
+| message | string | "ok" |
+| data | string | 抠完背景的png图片  |
+
+### 模型错误消息body:
+```json
+{
+  "code": 500,
+  "message": "Error message"
+}
+```
+
+### 错误响应参数
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| code | int | 错误码：500 表示服务器错误等，400 表示参数错误等 |
 | message | string | 错误信息 |
 
