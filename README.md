@@ -26,7 +26,9 @@ go get github.com/pinguo/open-api-sdk-go/v2
 | PG-AccessKey | string | 是 | 应用访问密钥 |
 | PG-Timestamp | string | 是 | 请求时间戳（Unix 秒） |
 | PG-Sign | string | 是 | 请求签名 |
+| PG-Callback | string | 否 | 回调URL，用于接收任务处理结果 |
 | Content-Type | string | 是 | application/json |
+
 
 ## 2.1. 创建任务
 
